@@ -414,6 +414,7 @@ tbody tr:hover td.rank, tbody tr:hover td.team { background: #f4f8ff; }
         <div class="sub">Predictions as of 12/06/2026</div>
       </div>
       <div class="controls">
+        <select id="datepick" aria-label="Predictions as of date"><option value="index.html" selected>12/06/2026</option><option value="snapshots/2026-06-11.html">11/06/2026</option></select>
         <div class="viewtoggle" role="group" aria-label="View"><button id="btnTable" class="vbtn on" aria-pressed="true">Table</button><button id="btnChart" class="vbtn" aria-pressed="false">Trend</button></div>
         <input id="q" type="search" placeholder="Find a team..." autocomplete="off" aria-label="Filter teams">
       </div>
@@ -622,7 +623,14 @@ tbody tr:hover td.rank, tbody tr:hover td.team { background: #f4f8ff; }
     });
     applyHighlight();
   });
+  var dp = document.getElementById('datepick');
+  if (dp) dp.addEventListener('change', function () { location.href = this.value; });
 })();
 </script>
 </body>
 </html>
+
+
+
+
+
